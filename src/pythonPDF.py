@@ -1,8 +1,10 @@
 from trello import TrelloClient
-
+token_key_file = open('.\\src\\token_key.txt','r')
+my_key = token_key_file.read().split('\n')
+print(my_key)
 client = TrelloClient(
-    api_key = '---------',
-    token='------------'
+    api_key = my_key[0],
+    token= my_key[1] 
 )
 
 all_board = client.list_boards()
@@ -17,4 +19,4 @@ all_list = last_board.list_lists()
 print(all_list)
 PO_LIST_ID = all_list[0].id
 target_list=board.get_list(PO_LIST_ID)
-created_card= target_list.add_card("kanaoka_test"," im made card")
+#created_card= target_list.add_card("kanaoka_test"," im made card")

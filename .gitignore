@@ -4,3 +4,4 @@ archive_PO/
 __pycache__/
 AutoPO.code-workspace
 src/ extract1.txt
+src/token_key.txt
