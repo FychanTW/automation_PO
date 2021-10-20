@@ -1,0 +1,6 @@
+sample_PO/
+new_PO/
+archive_PO/
+__pycache__/
+AutoPO.code-workspace
+src/ extract1.txt
