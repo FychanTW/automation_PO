@@ -1,12 +1,23 @@
 from trello import TrelloClient
-import os
-client = TrelloClient(
-    api_key = '--------',
-    token='-------'
-)
-path = os.getcwd()
+import os,fnmatch
+import pdf2txt as p2t
 
-f = open(".\\extract2.txt",'r',encoding='UTF-8')
+listOfFiles = os.listdir('.\\extracted_text')
+os.chdir('.\\extracted_text')
+pattern = "ZK*.txt"
+
+for entry in listOfFiles:
+    if fnmatch.fnmatch(entry, pattern):
+        f=open(entry,'r',encoding='UTF-8')
+        datalist = f.readlines()
+        for data in datalist:
+            if data[0:4]=='発注番号':
+                print('the PO number is:',data[-12:])
+                PO_Number = data[-12:]
+                break
+        f.close()
+
+""" f = open(".\\extract2.txt",'r',encoding='UTF-8')
 datalist = f.readlines()
 for data in datalist[0:10]:
     if data[0:4]=='発注番号':
@@ -32,4 +43,4 @@ for card in cards:
 #f2 = open("extract2.pdf",'rb')
 #cards[0].attach(name ="test1.pdf",mimeType ="application/pdf", file = f2)
 #f2.close()
-f.close()
+f.close() """
