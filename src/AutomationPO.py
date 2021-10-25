@@ -1,9 +1,10 @@
 import sys
+from PyQt5 import QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.Qt import *
-from AutomationPO_UI import Ui_MainWindow
+from AutomationPO_GUI import Ui_MainWindow
 
 class MyWindow(QMainWindow, Ui_MainWindow):
  def __init__(self, parent=None):
