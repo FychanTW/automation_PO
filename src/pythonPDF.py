@@ -1,7 +1,6 @@
 from trello import TrelloClient
 token_key_file = open('.\\src\\token_key.txt','r')
 my_key = token_key_file.read().split('\n')
-print(my_key)
 client = TrelloClient(
     api_key = my_key[0],
     token= my_key[1] 

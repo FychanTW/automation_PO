@@ -7,3 +7,4 @@ src/ extract1.txt
 src/token_key.txt
 extracted_text/*
 gui/setting.qdp）
+src/*BAK.py
